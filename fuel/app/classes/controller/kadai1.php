@@ -30,8 +30,10 @@ class Controller_Kadai1 extends Controller
 		{
 			$validation->add('name','名前');
 			$validation->add('email','メールアドレス')
+			->add_rule('required')
 			->add_rule('valid_email');
-			$validation->add('msg','投稿内容');
+			$validation->add('msg','投稿内容')
+			->add_rule('required');
 			if($validation->run())
 			{
 				$post_data_check = true;
